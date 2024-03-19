@@ -1,0 +1,28 @@
+import { Component } from '@angular/core';
+import { Movie } from '../models/movie';
+import { MovieRepository } from '../models/movie.repository';
+@Component({
+  selector: 'app-movies',
+  templateUrl: './movies.component.html',
+  styleUrl: './movies.component.css'
+})
+export class MoviesComponent {
+
+  movies : Movie[]; 
+  movieRepository : MovieRepository;
+  popularmovies : Movie[];
+  filterText : string = "";
+
+  constructor(){
+
+    this.movieRepository = new MovieRepository();
+    this.movies = this.movieRepository.getMovies();
+    this.popularmovies = this.movieRepository.getPopularMovies();
+  }
+    
+  
+
+  
+    
+
+}
